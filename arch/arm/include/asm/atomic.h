@@ -49,7 +49,7 @@ static inline void atomic_##op(int i, atomic_t *v)			\
 	: "=&r" (result), "=&r" (tmp), "+Qo" (v->counter)		\
 	: "r" (&v->counter), "Ir" (i)					\
 	: "cc");							\
-}									\
+}
 
 #define ATOMIC_OP_RETURN(op, c_op, asm_op)				\
 static inline int atomic_##op##_return_relaxed(int i, atomic_t *v)	\
